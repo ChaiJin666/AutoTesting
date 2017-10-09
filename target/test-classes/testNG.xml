@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="com.testChaijin" parallel="false">
+    <test name="testDemo1">
+        <!--<packages>-->
+        <!--<package name="com.testChaijin"/>-->
+        <!--</packages>-->
+        <classes>
+            <class name="com.testChaijin.TestDemo1"></class>
+        </classes>
+    </test>
+</suite>
