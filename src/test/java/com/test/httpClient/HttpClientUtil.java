@@ -150,8 +150,54 @@ public class HttpClientUtil {
             }
         return responseContent;
         }
-
+    private static String sendHttpGet(HttpGet httpGet) {
+        CloseableHttpClient httpClient = null;
+        CloseableHttpResponse response = null;
+        // 响应内容
+        String responseContent = null;
+            try {
+                // 创建默认的httpClient实例.
+                httpClient = getHttpClient();
+                // 配置请求信息
+                httpGet.setConfig(requestConfig);
+                // 执行请求
+                response = httpClient.execute(httpGet);
+                // 得到响应实例
+                HttpEntity entity = response.getEntity();
+                // 可以获得响应头
+                // Header[] headers = response.getHeaders(HttpHeaders.CONTENT_TYPE);
+                // for (Header header : headers) {
+                // System.out.println(header.getName());
+                // }
+                // 得到响应类型
+                // System.out.println(ContentType.getOrDefault(response.getEntity()).getMimeType());
+                // 判断响应状态
+                if (response.getStatusLine().getStatusCode() >= 300) {
+                    throw new Exception(
+                            "HTTP Request is not success, Response code is " + response.getStatusLine().getStatusCode());
+                }
+                if (HttpStatus.SC_OK == response.getStatusLine().getStatusCode()) {
+                    responseContent = EntityUtils.toString(entity, CHARSET_UTF_8);
+                    EntityUtils.consume(entity);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    // 释放资源
+                    if (response != null) {
+                        response.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        return responseContent;
     }
+
+}
+
+
 
 
 
