@@ -3,6 +3,7 @@ public class Node {
     private Node Next;//指针域
 
     public Node(int Data){
+        System.out.println("888");
         this.Data= Data;
     }
     public int getData() {
