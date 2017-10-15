@@ -5,7 +5,7 @@
         <!--<package name="com.testChaijin"/>-->
         <!--</packages>-->
         <classes>
-            <class name="com.testChaijin.TestDemo1"></class>
+            <class name="com.test.testcase.TestDemo1"></class>
         </classes>
     </test>
 </suite>
