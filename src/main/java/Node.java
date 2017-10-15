@@ -3,7 +3,7 @@ public class Node {
     private Node next;//指针域
 
     public Node(int Data){
-
+        System.out.print("new");
         this.data= Data;
     }
     public int getData() {
