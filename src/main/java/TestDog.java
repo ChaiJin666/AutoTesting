@@ -6,6 +6,7 @@
 class Dog extends Animal{
     public void move(){
         super.move();
+        System.out.println("我在master分支改了代码");
         System.out.println("狗可以跑和走");
     }
 }
