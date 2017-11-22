@@ -3,7 +3,7 @@ public class Node {
     private Node next;//指针域
 
     public Node(int Data){
-        this.Data= Data;
+        this.data= Data;
     }
     public int getData() {
 

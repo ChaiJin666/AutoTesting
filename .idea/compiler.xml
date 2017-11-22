@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="autochaijin001" />
+        <module name="HelloJUnit5" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="autochaijin001" target="1.7" />
+      <module name="HelloJUnit5" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
